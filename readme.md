@@ -9,3 +9,8 @@ I've upgraded the original printer with:
 - PC4-M6 connectors
 - PTFE blue tubes
 - Chimera Hotend 2in 2out All metal V6
+
+Inspired on:
+
+- https://github.com/Geeetech3D/Prusa_I3_3Dprinter
+- https://github.com/MarlinFirmware/Configurations/tree/import-2.0.x/config/examples/Geeetech
