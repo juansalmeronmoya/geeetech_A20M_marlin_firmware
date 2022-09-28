@@ -9,6 +9,7 @@ I've upgraded the original printer with:
 - PC4-M6 connectors
 - PTFE blue tubes
 - Chimera Hotend 2in 2out All metal V6
+- Geeetech 3D Touch V3.2
 
 Inspired on:
 
