@@ -1,0 +1,3 @@
+[submodule "A20M_Marlin_2.1.1"]
+	path = A20M_Marlin_2.1.1
+	url = git@github.com:MarlinFirmware/Marlin.git
