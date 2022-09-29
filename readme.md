@@ -10,7 +10,9 @@ I've upgraded the original printer with:
 - PTFE blue tubes
 - Chimera Hotend 2in 2out All metal V6
 
-Inspired on:
+Useful links::
 
 - https://github.com/Geeetech3D/Prusa_I3_3Dprinter
-- https://github.com/MarlinFirmware/Configurations/tree/import-2.0.x/config/examples/Geeetech
+- https://marlinfw.org/docs/configuration/configuration.html
+- https://marlinfw.org/docs/hardware/tmc_drivers.html
+- https://github.com/MarlinFirmware/Configurations/tree/release-2.1.1/config/examples/Geeetech/A20M
