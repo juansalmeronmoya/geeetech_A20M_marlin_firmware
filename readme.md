@@ -8,7 +8,7 @@ I've upgraded the original printer with:
 - GELID Silent 5 fan
 - PC4-M6 connectors
 - PTFE blue tubes
-- Chimera Hotend 2in 2out All metal V6
+- E3D V6 hotend (replaced a Chimera 2in 2out, which gave poor results)
 - Geeetech 3D Touch V3.2
 
 ## Board
