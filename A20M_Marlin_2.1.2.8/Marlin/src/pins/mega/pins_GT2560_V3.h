@@ -114,13 +114,16 @@
 #define Z_DIR_PIN                             23
 #define Z_ENABLE_PIN                          27
 
-#define E0_STEP_PIN                           46
-#define E0_DIR_PIN                            44
-#define E0_ENABLE_PIN                         12
+// The hotend harness is plugged into EXT1 instead of EXT0, whose thermistor input was
+// damaged by the same short as the HB connector. All E0 and E1 pins are swapped so that
+// Marlin's E0 drives the EXT1 connector. See docs/GT2560_V3.1_pinout.md in the repo root.
+#define E0_STEP_PIN                           49  // EXT1 (original E0: 46)
+#define E0_DIR_PIN                            47  // EXT1 (original E0: 44)
+#define E0_ENABLE_PIN                         48  // EXT1 (original E0: 12)
 
-#define E1_STEP_PIN                           49
-#define E1_DIR_PIN                            47
-#define E1_ENABLE_PIN                         48
+#define E1_STEP_PIN                           46  // EXT0 (original E1: 49)
+#define E1_DIR_PIN                            44  // EXT0 (original E1: 47)
+#define E1_ENABLE_PIN                         12  // EXT0 (original E1: 48)
 
 #define E2_STEP_PIN                           43
 #define E2_DIR_PIN                            45
@@ -129,11 +132,11 @@
 //
 // Temperature Sensors
 //
-#define TEMP_0_PIN                            11  // Analog Input
-#define TEMP_1_PIN                             9  // Analog Input
+#define TEMP_0_PIN                             9  // Analog Input, EXT1 (original E0: 11)
+#define TEMP_1_PIN                            11  // Analog Input, EXT0, damaged (original E1: 9)
 #define TEMP_2_PIN                             8  // Analog Input
 // Bed thermistor moved to the EXT2 connector (pins 11-12, TEMP_2_PIN) after the original
-// HB connector ADC channel was damaged by a short. Keeps EXT1 free for a second hotend.
+// HB connector ADC channel was damaged by a short.
 // See docs/GT2560_V3.1_pinout.md in the repo root.
 //#define TEMP_BED_PIN                        10  // Analog Input (original)
 #define TEMP_BED_PIN                    TEMP_2_PIN
@@ -141,12 +144,12 @@
 //
 // Heaters / Fans
 //
-#define HEATER_0_PIN                          10
-#define HEATER_1_PIN                           3
+#define HEATER_0_PIN                           3  // EXT1 (original E0: 10)
+#define HEATER_1_PIN                          10  // EXT0 (original E1: 3)
 #define HEATER_2_PIN                           2
 #define HEATER_BED_PIN                         4
-#define FAN0_PIN                               9
-#define FAN1_PIN                               8
+#define FAN0_PIN                               8  // EXT1 fan pins (original: 9)
+#define FAN1_PIN                               9  // EXT0 fan pins (original: 8)
 #define FAN2_PIN                               7
 
 //
