@@ -11,6 +11,19 @@ I've upgraded the original printer with:
 - E3D V6 hotend (replaced a Chimera 2in 2out, which gave poor results)
 - Geeetech 3D Touch V3.2
 
+## Firmware
+
+- `A20M_Marlin_2.1.2.8`: current firmware, Marlin 2.1.2.8 based on the official
+  [Geeetech/A20M example config](https://github.com/MarlinFirmware/Configurations/tree/release-2.1.2.8/config/examples/Geeetech/A20M).
+- `A20M_Marlin_2.0.9.5`: previous firmware, kept for reference.
+- `A20M_Marlin-1.1.x12864`: original Marlin 1.1.x firmware.
+
+Build and flash (PlatformIO, board connected over USB), from the firmware folder:
+
+```
+pio run -e mega2560 -t upload
+```
+
 ## Board
 
 - Geeetech GT2560 V3.1 ([official schematic](https://github.com/Geeetech3D/Diagram/blob/master/GT2560_V3.0_SCH.pdf), V3.0, same layout)
