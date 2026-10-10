@@ -126,7 +126,11 @@
 #define TEMP_0_PIN                            11  // Analog Input
 #define TEMP_1_PIN                             9  // Analog Input
 #define TEMP_2_PIN                             8  // Analog Input
-#define TEMP_BED_PIN                          10  // Analog Input
+// Bed thermistor moved to the EXT2 connector (pins 11-12, TEMP_2_PIN) after the original
+// HB connector ADC channel was damaged by a short. Keeps EXT1 free for a second hotend.
+// See docs/GT2560_V3.1_pinout.md in the repo root.
+//#define TEMP_BED_PIN                        10  // Analog Input (original)
+#define TEMP_BED_PIN                    TEMP_2_PIN
 
 //
 // Heaters / Fans
