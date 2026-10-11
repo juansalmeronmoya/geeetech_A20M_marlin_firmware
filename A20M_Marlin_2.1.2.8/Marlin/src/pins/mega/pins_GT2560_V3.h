@@ -137,9 +137,9 @@
 #define TEMP_2_PIN                            11  // Analog Input, EXT0, damaged (original E2: 8)
 // The short on the bed connector damaged the A9, A10 and A11 thermistor inputs (EXT1, HB and
 // EXT0); only A8 (EXT2) still reads correctly and is used for the hotend. The bed thermistor goes
-// to ADC0 on the ADC header with an external 4.7k pull-up to 5V and a filter capacitor to GND.
+// to ADC1 on the ADC header with an external 4.7k pull-up to 5V and a filter capacitor to GND.
 //#define TEMP_BED_PIN                        10  // Analog Input (original)
-#define TEMP_BED_PIN                           0  // Analog Input, ADC header pin 0
+#define TEMP_BED_PIN                           1  // Analog Input, ADC header pin 1
 
 //
 // Heaters / Fans
@@ -160,10 +160,9 @@
 #define LED_PIN                               13  // Use 6 (case light) for external LED. 13 is internal (yellow) LED.
 #define PS_ON_PIN                             12
 
-// Pin 54 (A0) is used as the bed thermistor input (see TEMP_BED_PIN), so no SUICIDE_PIN.
-//#if NUM_RUNOUT_SENSORS < 3
-//  #define SUICIDE_PIN                       54  // This pin must be enabled at boot to keep power flowing
-//#endif
+#if NUM_RUNOUT_SENSORS < 3
+  #define SUICIDE_PIN                         54  // This pin must be enabled at boot to keep power flowing
+#endif
 
 #ifndef CASE_LIGHT_PIN
   #define CASE_LIGHT_PIN                       6  // 21
