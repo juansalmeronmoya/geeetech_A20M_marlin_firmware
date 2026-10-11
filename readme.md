@@ -18,7 +18,8 @@ I've upgraded the original printer with:
 - `A20M_Marlin_2.0.9.5`: previous firmware, kept for reference.
 - `A20M_Marlin-1.1.x12864`: original Marlin 1.1.x firmware.
 
-Build and flash (PlatformIO, board connected over USB), from the firmware folder:
+Build and flash (PlatformIO, board connected over USB and powered from the 12 V PSU: USB alone
+does not power the MCU), from the firmware folder:
 
 ```
 pio run -e mega2560 -t upload
@@ -28,11 +29,12 @@ pio run -e mega2560 -t upload
 
 - Geeetech GT2560 V3.1 ([official schematic](https://github.com/Geeetech3D/Diagram/blob/master/GT2560_V3.0_SCH.pdf), V3.0, same layout)
 - Connector pinouts and the bed thermistor rewiring: [docs/GT2560_V3.1_pinout.md](docs/GT2560_V3.1_pinout.md)
-- The bed thermistor is wired to `EXT2` (pins 11-12) instead of `HB`, after the original input was damaged by a short.
+- After a short on the bed connector damaged the `EXT0`, `EXT1` and `HB` thermistor inputs, the hotend
+  runs from `EXT2` and the bed thermistor from `ADC` header pin 1 with an external 4.7 kΩ pull-up.
 
-Useful links::
+Useful links:
 
 - https://github.com/Geeetech3D/Prusa_I3_3Dprinter
 - https://marlinfw.org/docs/configuration/configuration.html
 - https://marlinfw.org/docs/hardware/tmc_drivers.html
-- https://github.com/MarlinFirmware/Configurations/tree/release-2.1.1/config/examples/Geeetech/A20M
+- https://github.com/MarlinFirmware/Configurations/tree/release-2.1.2.8/config/examples/Geeetech/A20M
