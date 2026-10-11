@@ -114,9 +114,9 @@
 #define Z_DIR_PIN                             23
 #define Z_ENABLE_PIN                          27
 
-// The hotend harness is plugged into EXT1 instead of EXT0, whose thermistor input was
-// damaged by the same short as the HB connector. All E0 and E1 pins are swapped so that
-// Marlin's E0 drives the EXT1 connector. See docs/GT2560_V3.1_pinout.md in the repo root.
+// The hotend harness (motor, heater, fan) is plugged into EXT1 instead of EXT0. All E0 and E1
+// stepper/heater/fan pins are swapped so that Marlin's E0 drives the EXT1 connector. The hotend
+// thermistor is on EXT2 pads 11-12 (see TEMP_0_PIN). See docs/GT2560_V3.1_pinout.md.
 #define E0_STEP_PIN                           49  // EXT1 (original E0: 46)
 #define E0_DIR_PIN                            47  // EXT1 (original E0: 44)
 #define E0_ENABLE_PIN                         48  // EXT1 (original E0: 12)
@@ -132,14 +132,15 @@
 //
 // Temperature Sensors
 //
-#define TEMP_0_PIN                             9  // Analog Input, EXT1 (original E0: 11)
-#define TEMP_1_PIN                            11  // Analog Input, EXT0, damaged (original E1: 9)
+#define TEMP_0_PIN                             8  // Analog Input, EXT2 pads 11-12 (original E0: 11)
+#define TEMP_1_PIN                            11  // Analog Input, EXT0, damaged (original E1: 9, also damaged)
 #define TEMP_2_PIN                             8  // Analog Input
-// Bed thermistor moved to the EXT2 connector (pins 11-12, TEMP_2_PIN) after the original
-// HB connector ADC channel was damaged by a short.
+// The short on the bed connector damaged the A9, A10 and A11 thermistor inputs (EXT1, HB and
+// EXT0); only A8 (EXT2) still reads correctly and is used for the hotend. The bed thermistor goes
+// to ADC1 on the ADC header with an external 4.7k pull-up to 5V and a filter capacitor to GND.
 // See docs/GT2560_V3.1_pinout.md in the repo root.
 //#define TEMP_BED_PIN                        10  // Analog Input (original)
-#define TEMP_BED_PIN                    TEMP_2_PIN
+#define TEMP_BED_PIN                           1  // Analog Input, ADC header pin 1
 
 //
 // Heaters / Fans
