@@ -114,20 +114,22 @@
 #define Z_DIR_PIN                             23
 #define Z_ENABLE_PIN                          27
 
-// The whole hotend harness is plugged into EXT2 (connector soldered on the empty footprint),
-// the only connector whose thermistor input (A8) survived the short on the bed connector.
-// E0 and E2 pins are swapped so that Marlin's E0 drives EXT2. See docs/GT2560_V3.1_pinout.md.
-#define E0_STEP_PIN                           43  // EXT2 (original E0: 46)
-#define E0_DIR_PIN                            45  // EXT2 (original E0: 44)
-#define E0_ENABLE_PIN                         41  // EXT2 (original E0: 12)
+// The extruder motor runs from the original E0 stepper driver (EXT0 driver socket). The hotend
+// heater, fan and thermistor are plugged into EXT2 (connector soldered on the empty footprint),
+// the only connector whose thermistor input (A8) survived the short on the bed connector, so the
+// E0 heater, fan and thermistor pins below are the EXT2 ones. The stepper pins are the original
+// ones. See docs/GT2560_V3.1_pinout.md.
+#define E0_STEP_PIN                           46
+#define E0_DIR_PIN                            44
+#define E0_ENABLE_PIN                         12
 
 #define E1_STEP_PIN                           49
 #define E1_DIR_PIN                            47
 #define E1_ENABLE_PIN                         48
 
-#define E2_STEP_PIN                           46  // EXT0 (original E2: 43)
-#define E2_DIR_PIN                            44  // EXT0 (original E2: 45)
-#define E2_ENABLE_PIN                         12  // EXT0 (original E2: 41)
+#define E2_STEP_PIN                           43
+#define E2_DIR_PIN                            45
+#define E2_ENABLE_PIN                         41
 
 //
 // Temperature Sensors
